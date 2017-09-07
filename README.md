@@ -1,6 +1,8 @@
-## Calendar
+## [Calendar](https://stanzacal.herokuapp.com/)
 
 This application calls Stanza's GraphQL API and renders the results about the calendar's name and events in a responsive, modern and accessible way. While it waits for the results from the `GET` request to return to the client, it renders a spinner in the middle of the screen.
+
+This application can be viewed live at https://stanzacal.herokuapp.com/.
 
 ## Stack
 
