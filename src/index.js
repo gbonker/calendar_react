@@ -1,8 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import AppWithData from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { ApolloClient, createNetworkInterface, ApolloProvider } from 'react-apollo';
+
+const networkInterface = createNetworkInterface({
+  uri: 'https://www.stanza.co/api/graphql'
+});
+
+const client = new ApolloClient({
+  networkInterface: networkInterface
+});
+
+ReactDOM.render(
+	<ApolloProvider client={client}>
+    <AppWithData />
+  </ApolloProvider>, document.getElementById('root'));
+
 registerServiceWorker();
