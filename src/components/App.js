@@ -15,7 +15,6 @@ const App = (props) => {
       <p>Loading...</p>
     );
   } else {
-    console.log(props.data);
     const { calendar } = props.data; 
     return (
       <div>
