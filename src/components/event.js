@@ -17,8 +17,8 @@ const Event = (props) => {
         <div
           className="panel-body" 
           style={ bgImageStyle }>
-          <h2 className="text-center">{props.name}</h2>
-          <p className="event-date">{moment(new Date(props.date)).format("dddd, MMMM Do, YYYY")}</p>
+          <h2 className="text-center" tabIndex="0">{props.name}</h2>
+          <p className="event-date" tabIndex="0">{moment(new Date(props.date)).format("dddd, MMMM Do, YYYY")}</p>
         </div>
       </div>
     </div>
