@@ -1,6 +1,18 @@
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  padding: 2rem;
   color: white;
+  margin-bottom: 2rem;
+}
+
+.event-panel {
+	max-width: 400px;
+  color: white;
+  position: relative;
+}
+
+.event-panel p {
+  position: absolute;
+  bottom: 1rem;
+  left: 2rem;
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { gql, graphql } from 'react-apollo';
 import '../styles/App.css';
 
@@ -10,19 +10,19 @@ const App = (props) => {
   if (props.data.calendar) {
     loaded = true;
   }
-  console.log(props.data);
   if (!loaded) {
     return (
       <p>Loading...</p>
     );
   } else {
+    const { calendar } = props.data; 
     return (
       <div>
         <Header 
-        	name={props.data.calendar.name}
-          subscriberCount={props.data.calendar.subscriberCount}
+        	name={calendar.name}
+          subscriberCount={calendar.subscriberCount}
         />
-        <Calendar />
+        <Calendar events={calendar.upcomingEvents.edges} />
       </div>
     );
   }
@@ -32,18 +32,17 @@ const query = gql`query {
   calendar(shortname: "nfl-49ers") {
     name
     subscriberCount
-    upcomingEvents: events(first: 10, filterBy: {past: false}) {
+    
+    upcomingEvents: events(first: 24, filterBy: {past: false}) {
       edges {
         node {
+          id
           name
           images {
-            small
             medium
-            large
           }
           dates {
             start
-            end
           }
         }
       }
