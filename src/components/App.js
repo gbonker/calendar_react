@@ -6,13 +6,11 @@ import Header from './header.js';
 import Calendar from './calendar.js';
 
 const App = (props) => {
-  var loaded = false;
-  if (props.data.calendar) {
-    loaded = true;
-  }
-  if (!loaded) {
+  if (!props.data.calendar) { // if data from the API has not loaded yet
     return (
-      <p>Loading...</p>
+      <div className="spinner-parent">
+        <img src="http://res.cloudinary.com/dxedeitqy/image/upload/v1504816085/Spinner.gif" className="spinner" alt="loading" />
+      </div>
     );
   } else {
     const { calendar } = props.data; 
