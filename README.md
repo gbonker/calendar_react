@@ -1,3 +1,17 @@
+## Calendar
+
+This application calls Stanza's GraphQL API and renders the results about the calendar's name and events in a responsive, modern and accessible way. While it waits for the results from the `GET` request to return to the client, it renders a spinner in the middle of the screen.
+
+## Stack
+
+- React, version 15.6.1
+- Apollo
+- GraphQL
+- Bootstrap, version 3.3.7
+- Stanza API
+
+## Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
