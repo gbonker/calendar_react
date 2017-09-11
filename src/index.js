@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { ApolloClient, createNetworkInterface, ApolloProvider } from 'react-apollo';
 
 const networkInterface = createNetworkInterface({
-  uri: 'https://www.stanza.dance/api/graphql'
+  uri: 'https://www.stanza.co/api/graphql'
 });
 
 const client = new ApolloClient({
